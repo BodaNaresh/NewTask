@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-
 using Newtonsoft.Json;
 using System.Web.Mvc;
 
@@ -21,6 +20,7 @@ namespace NEWTODOAPP.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult Login(Login logg)
         {
@@ -38,6 +38,18 @@ namespace NEWTODOAPP.Controllers
         {
             string response = service.Register(regg);
             return Json(response,JsonRequestBehavior.AllowGet);
+        }
+
+      
+        public ActionResult Todoitem()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Todoitem(Todo todo)
+        {
+            return View();
         }
     } 
 }

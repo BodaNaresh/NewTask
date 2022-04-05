@@ -1,0 +1,122 @@
+﻿
+body {
+    background-color: blueviolet;
+}
+
+.container {
+    width: 100%;
+    min-width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.Todo-heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: sans-serif;
+}
+
+.Todo_board {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: sans-serif;
+}
+
+.todo-heading_text {
+    font-size: 1.8rem;
+    background-color: tomato;
+    padding: 0.8rem 1.7rem;
+    border-radius: 0.5rem;
+    margin: 1rem;
+}
+
+.todo_block,
+.create-new-task-block {
+    padding: 0.2rem;
+    width: 30.5%;
+    min-width: 7rem;
+    min-height: 4.5rem;
+    border-radius: 0.3rem;
+}
+
+#Todo {
+    background-color:#FFFFFF;
+}
+
+#Doing {
+    background-color: #FFFFFF;
+}
+
+#Done {
+    background-color: #FFFFFF;
+}
+
+.task {
+    background-color: deepskyblue;
+    margin: 0.2rem 0rem 0.3rem 0rem;
+    border: 0.1rem solid black;
+    border-radius: 0.2rem;
+    padding: 0.5rem 0.2rem 0.5rem 2rem;
+}
+
+#task-button {
+    margin: 0.2rem 0rem 0.1rem 0rem;
+    background-color: yellowgreen;
+    border-radius: 0.2rem;
+    width: 100%;
+    border: 0.25rem solid black;
+    padding: 0.5rem 2.7rem;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+}
+
+.create-new-task-block {
+    display: none;
+    background: #ffaf00;
+    width: 100.4%;
+    flex-direction: column;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: row;
+    margin: 0.1rem;
+}
+
+
+.form-row-input {
+    border: 0.1rem solid black;
+    border-radius: 0rem 0.2rem 0.2rem 0rem;
+    width: 200%;
+}
+
+textarea {
+    resize:none;
+}
+
+.form-row-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin: 0.1rem;
+}
+
+#edit-button,
+#save-button,
+#cancel-button {
+    margin: 0.1rem 0rem 0.1rem 0rem;
+    background-color: white;
+    border-radius: 0.2rem;
+    width: 25.2%;
+    border: 0.25rem solid black;
+    padding: 0.2rem 2.7rem;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+}
+
+#edit-button {
+    display: none;
+}
