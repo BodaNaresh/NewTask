@@ -12,14 +12,25 @@ namespace NEWTODOAPP.Models
     {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DBConnectionString"].ConnectionString);
         SqlCommand cmd = null;
-        SqlDataAdapter dad = null;
-        DataTable dt = null;
+        
+
         public string Register(Register register)
         {
+           
+            cmd = new SqlCommand("createUser", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Name", register.Name);
+            cmd.Parameters.AddWithValue("@Email", register.Email);
+            cmd.Parameters.AddWithValue("@Gender", register.Gender);
+            cmd.Parameters.AddWithValue("@Mobile", register.Mobile);
+            cmd.Parameters.AddWithValue("@Location", register.Location);
+            cmd.Parameters.AddWithValue("@Password", register.Password);
 
-            cmd = new SqlCommand("insert into Registration(UserName,Email,Gender,Mobile,Location,Password)values('" + register.UserName + "','" + register.Email + "','" + register.Gender + "','" + register.Mobile + "','" + register.Location + "','" + register.Password + "')", con) ;
+           
+
             con.Open();
-            int i = cmd.ExecuteNonQuery();
+            int i= cmd.ExecuteNonQuery();
+           
             con.Close();
             if (i > 0)
             {
@@ -32,21 +43,60 @@ namespace NEWTODOAPP.Models
 
         }
 
-        public string Login(Login login)
+        public string Login(Register rgg)
         {
-            dad = new SqlDataAdapter("select * from Registration where Email='" + login.Email+"' AND Password='"+login.Password+"'", con);
-            dt = new DataTable();
-            dad.Fill(dt);
-            if (dt.Rows.Count > 0)
+      
+            cmd = new SqlCommand("Users", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Email", rgg.Email);
+            cmd.Parameters.AddWithValue("Password", rgg.Password);
+            con.Open();
+            int i = cmd.ExecuteNonQuery();
+            con.Close();
+            if (i > 0)
             {
-                return "Logged in";
+                return "Sucessfully Registred";
             }
             else
             {
-                return "Login Failed";
+                return "Registration failed";
+            }
+           
+        }
+        public string Todo(Todo todo)
+        {
+            cmd = new SqlCommand("insert into Todo(Title,Description)values('" + todo.Title + "','" + todo.Description + "')", con);
+            con.Open();
+            int i = cmd.ExecuteNonQuery();
+            con.Close();
+            if (i > 0)
+            {
+                return "Sucessfully posted";
+            }
+            else
+            {
+                return "failed";
             }
         }
 
-      
+        
+        public string DeleteTodo(Todo todo)
+        {
+            cmd = new SqlCommand("delete from Todo where title='"+todo.Title+"'" , con);
+            con.Open();
+            int i = cmd.ExecuteNonQuery();
+            con.Close();
+            if (i > 0)
+            {
+                return "Sucessfully Deleted";
+            }
+            else
+            {
+                return "failed";
+            }
+
+        }
+
+
     }
 }
