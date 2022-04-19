@@ -1,8 +1,9 @@
 ﻿function Login() {
+
     let Email = $("#txtEmail").val();
     let Password = $("#txtpassword").val();
 
-    var url = "/Admin/Login";
+    var url = "http://localhost:62045/api/Login/GetCredentials";
     var data = JSON.stringify({
         "Email": Email,
         "Password": Password
@@ -15,7 +16,7 @@
         dataType: "json",
         success: function (result) {
             if (result != "Login Failed")
-                window.location.href = "/Home";
+                window.location.href = "/Admin/Todoitem";
         },
         error: function (error) {
             alert(error);

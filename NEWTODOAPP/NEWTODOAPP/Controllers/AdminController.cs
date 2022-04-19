@@ -11,8 +11,13 @@ namespace NEWTODOAPP.Controllers
 {
     public class AdminController : Controller
     {
-        Service service = new Service();
+     
         public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult Home()
         {
             return View();
         }
@@ -20,36 +25,20 @@ namespace NEWTODOAPP.Controllers
         {
             return View();
         }
-
-        [HttpPost]
-        public ActionResult Login(Login logg)
-        {
-            string res = service.Login(logg);
-            return Json(res,JsonRequestBehavior.AllowGet);
-        }
-
         public ActionResult Register()
         {
             return View();
         }
-        
-       [HttpPost]
-        public ActionResult Register(Register regg)
-        {
-            string response = service.Register(regg);
-            return Json(response,JsonRequestBehavior.AllowGet);
-        }
 
-      
         public ActionResult Todoitem()
         {
             return View();
         }
 
-        [HttpPost]
-        public ActionResult Todoitem(Todo todo)
-        {
-            return View();
-        }
+       
+
+
+
+
     } 
 }

@@ -1,4 +1,4 @@
-﻿@model NEWTODOAPP.Models.Todo
+﻿@*@model NEWTODOAPP.Models.Todo*@
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,51 +7,60 @@
     <title>Kanban Board</title>
 </head>
 <body>
- <h2>Todo Application</h2>
-    <div class="container">
-        <div class="Todo-heading">
-            <strong class="todo-heading_text">Todo Boards</strong>
-        </div>
-        <div class="Todo_board">
-            <div class="todo_block" id="Todo" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <strong>ToDo</strong>
-                <div class="Todo_btn_block">
-                    <button id="task-button" onclick="createTask()"><span>Create New Task</span></button>
+    <h2>Todo Application</h2>
+    <div class="ticket">
+        <button id="button1" >Add new Board</button>
+    </div>
+    @*<select name="Todos" id="Todos">
+        <option value="Todo">Todo</option>
+        <option value="Doing">Doing</option>
+        <option value="Done">Done</option>
+    </select>*@
+    <div id="boards" >
+        <div class="container" >
+            <div class="todo_heading_text">
+                <strong>Todo Boards</strong>
+            </div>
+
+            <div class="Todo_board">
+                <div class="todo_block" id="Todo">
+                    <strong>ToDo</strong><br />
+                    <input type="text" id="inputtext" class="inputtext" placeholder="Enter Todo here....">
+                    <button id="btn" class="btnn" onclick="saveTask()">Add To Do</button>
+                
+                    <div id="tasks">
+                        <div class="ToDoList" draggable="true">
+                            @*<div class="todo">
+                               <input type="text" class="text" value="Todo" readonly="readonly"/>
+                                </div>
+                                <div class="actions">
+                                 <button class="edit">edit</button>
+                                 <button class="delete">X</button>
+                                </div>
+                            </div>*@
+                        </div>
+                    </div>
+               
+                 </div>
+                <div class="todo_block" id="Doing">
+                    <strong>Doing</strong>
+                    @*<div id="Inprogress" ></div>*@
                 </div>
-                <div class="create-new-task-block" id="create-new-task-block">
-                    <strong>New Task</strong>
-                    <span class="form-row">
-                        <input class="form-row-input" type="text" name="task-name" id="task-name" placeholder=" enter new task">
-                    </span>
-                    <span class="form-row">
-                        <textarea class="form-row-input" name="task-description" id="task-description" placeholder="write some description"></textarea>
-                    </span>
-                    <span class="form-row-buttons">
-                            <button id="edit-button" onclick="editTask()">Edit</button>
-                            <button id="save-button" onclick="saveTask()">+Add</button>
-                            <button id="cancel-button" onclick="createTask()">cancel</button>
-                    </span>
-                </div>
-                <div class="task" id="task1" draggable="true" ondragstart="drag(event)">
-                    <span>Task1</span>
-                </div>
-                <div class="task" id="task2" draggable="true" ondragstart="drag(event)">
-                    <span>Task2</span>
-                </div>
-                <div class="task" id="task3" draggable="true" ondragstart="drag(event)">
-                    <span>Task3</span>
+                <div class="todo_block" id="Done">
+                    <strong>Done</strong>
+                    @*<div id="Completed"></div>*@
                 </div>
             </div>
-            <div class="todo_block" id="Doing" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <strong>Doing</strong>
-            </div>
-            <div class="todo_block" id="Done" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <strong>Done</strong>
-            </div>
-           
         </div>
     </div>
+
+
+
+
+
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
     <script src="~/Scripts/bootstrap.min.js"></script>
 

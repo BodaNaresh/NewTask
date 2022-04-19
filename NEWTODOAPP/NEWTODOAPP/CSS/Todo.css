@@ -1,6 +1,14 @@
 ﻿
 body {
-    background-color: blueviolet;
+    background-color: cornflowerblue;
+}
+#boards {
+    width: 100%;
+    min-width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    margin-block: 10px;
 }
 
 .container {
@@ -9,6 +17,22 @@ body {
     margin: auto;
     display: flex;
     flex-direction: column;
+    margin-block:10px;
+    
+}
+
+
+.inputtext {
+    width: 300px;
+    cursor: pointer;
+}
+#btn {
+    cursor: pointer;
+    height: 30px;
+    width: 100px;
+    margin-top: 15px;
+    background-color: rgb(13, 13, 241);
+    color: white;
 }
 
 .Todo-heading {
@@ -25,24 +49,48 @@ body {
     font-family: sans-serif;
 }
 
-.todo-heading_text {
+.todo_heading_text {
     font-size: 1.8rem;
     background-color: tomato;
     padding: 0.8rem 1.7rem;
     border-radius: 0.5rem;
     margin: 1rem;
+    text-align:center;
 }
 
-.todo_block,
-.create-new-task-block {
+.todo_block {
     padding: 0.2rem;
+    background-color: yellow;
     width: 30.5%;
     min-width: 7rem;
     min-height: 4.5rem;
     border-radius: 0.3rem;
+    display: inline-block;
+    justify-content: space-around;
 }
+/*.todo_block1 {
+    padding: 0.2rem;
+    background-color:blueviolet;
+    width: 30.5%;
+    min-width: 7rem;
+    min-height: 4.5rem;
+    border-radius: 0.3rem;
+    display: inline-block;
+    justify-content: space-between;
+    column-gap:10px;
+}
+.todo_block2 {
+    padding: 0.2rem;
+    background-color:aqua;
+    width: 30.5%;
+    min-width: 7rem;
+    min-height: 4.5rem;
+    border-radius: 0.3rem;
+    display:inline-block;
+}*/
 
-#Todo {
+
+/*#Todo {
     background-color:#FFFFFF;
 }
 
@@ -53,70 +101,58 @@ body {
 #Done {
     background-color: #FFFFFF;
 }
-
-.task {
-    background-color: deepskyblue;
-    margin: 0.2rem 0rem 0.3rem 0rem;
-    border: 0.1rem solid black;
-    border-radius: 0.2rem;
-    padding: 0.5rem 0.2rem 0.5rem 2rem;
+*/
+ .input {
+    height: 40px;
+    border:1px;
+    width:250px;
+   
 }
 
-#task-button {
-    margin: 0.2rem 0rem 0.1rem 0rem;
-    background-color: yellowgreen;
-    border-radius: 0.2rem;
-    width: 100%;
-    border: 0.25rem solid black;
-    padding: 0.5rem 2.7rem;
-    border-radius: 0.3rem;
-    font-size: 1rem;
+.ToDoList {
+    display:flex;
+    margin-top: 5px;
+   /* background-color: white;*/
 }
 
-.create-new-task-block {
-    display: none;
-    background: #ffaf00;
-    width: 100.4%;
-    flex-direction: column;
+ .text {
+    
+    outline: none;
+    margin-left: 2px;
+    width: 300px;
+    cursor: pointer;
+    background-color:aqua
 }
 
-.form-row {
-    display: flex;
-    flex-direction: row;
-    margin: 0.1rem;
+#area {
+    width: 300px;
+    height:60px;
+    cursor: pointer;
+}
+ 
+
+  .edit {
+    margin-top: 10px;
+    right: 100px;
+    cursor: pointer;
+    
 }
 
-
-.form-row-input {
-    border: 0.1rem solid black;
-    border-radius: 0rem 0.2rem 0.2rem 0rem;
-    width: 200%;
+.edit:hover {
+    background-color:antiquewhite;
+    padding:5px;
+    color:black;
 }
 
-textarea {
-    resize:none;
+.delete {
+    right: 10px;
+    margin-right: 3px;
+    margin-left: 2px;
+    cursor: pointer;
 }
 
-.form-row-buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    margin: 0.1rem;
-}
-
-#edit-button,
-#save-button,
-#cancel-button {
-    margin: 0.1rem 0rem 0.1rem 0rem;
-    background-color: white;
-    border-radius: 0.2rem;
-    width: 25.2%;
-    border: 0.25rem solid black;
-    padding: 0.2rem 2.7rem;
-    border-radius: 0.3rem;
-    font-size: 1rem;
-}
-
-#edit-button {
-    display: none;
+ .delete:hover {
+     background-color:red;
+     padding:5px;
+     color:white;
 }

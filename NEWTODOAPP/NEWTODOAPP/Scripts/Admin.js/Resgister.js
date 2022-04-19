@@ -1,6 +1,6 @@
 ﻿
 function Register() {
-    let UserName = $("#txtName").val();
+    let Name = $("#txtName").val();
     let Email = $("#txtEmail").val();
     let Gender = "";
     if ($("#RadioMale").prop("checked") == true) {
@@ -16,9 +16,9 @@ function Register() {
     let Password = $("#txtPassword").val();
     
 
-    var url = "/Admin/Register";
+    var url = "http://localhost:62045/api/User/PostData";
     var data = JSON.stringify({
-        "UserName": UserName,
+        "Name": Name,
         "Email": Email,
         "Gender": Gender,
         "Mobile": Mobile,
